@@ -1,0 +1,8 @@
+*.o
+*.elf
+*.0
+*.backup
+temp.ver
+temp.typo
+build.counter
+storage.txt

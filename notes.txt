@@ -1,0 +1,64 @@
+Process Switching
+
+-*- One TSS per CPU
+
+    address of kernel stack (ESP)
+    I/O permission bitmap for in/out operations (set the 2-bit IOPL field in the eflags register to 3)
+    8-byte Task State Segment Descriptor (TSSD) (clear the S flag of a TSSD to denote that the TSS uses the System Segment)
+
+
+Exception/Interrupt map 
+
+///////////////////////// INTEL DEFINED INTERRUPTS //////////////////////////
+0	0	Divide Error
+1	1	Debug Exceptions
+2	2	NMI Interrupt
+3	3	Breakpoint
+4	4	INTO Detected Overflow
+5	5	BOUND Range Exceeded
+6	6	Invalid Opcode
+7	7	Coprocessor Not Available
+8	8	Double Exception
+9	9	Coprocessor Segment Overrun
+10	A	Invalid Task State Segment
+11	B	Segment Not Present
+12	C	Stack Fault
+13	D	General Protection
+14	E	Page Fault
+15	F	(reserved)
+16	10	Coprocessor Error
+17	11	
+18	12
+19	13
+///////////////////////// RESERVED ///////////////////////////////////////////
+20	14
+21	15
+22	16
+23 	17
+24 	18
+25	19
+26	1A
+27	1B
+28	1C
+29	1D
+30	1E
+31	1F
+///////////////////////// USER DEFINED ///////////////////////////////////////
+32	20	IRQ 0 (timer) 							
+33 	21	IRQ 1 (keyboard) 						
+34 	22	IRQ 2 (cascade; reserved for 2nd 8259)
+35 	23	IRQ 3 (COM2,4) 							
+36 	24	IRQ 4 (COM1,3) 							
+37 	25	IRQ 5 (LPT) 							
+38 	26	IRQ 6 (floppy) 							
+39 	27	IRQ 7 									
+40 	28	IRQ 8 (realtime clock)
+41 	29	IRQ 9
+42 	2A	IRQ 10
+43 	2B	IRQ 11
+44 	2C	IRQ 12 (PS/2 mouse)
+45 	2D	IRQ 13 ('386 coprocessor)
+46 	2E	IRQ 14 (primary IDE drives)
+47 	2F	IRQ 15 (secondary IDE drives)
+48 	30
+
